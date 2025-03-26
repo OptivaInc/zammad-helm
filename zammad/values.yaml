@@ -137,6 +137,9 @@ zammadConfig:
       # my-label: "value"
     podAnnotations: {}
       # my-annotation: "value"
+    nodeSelector: {}
+    tolerations: []
+    affinity: {}
 
   postgresql:
     # enable/disable postgresql chart dependency
@@ -195,6 +198,9 @@ zammadConfig:
       # my-label: "value"
     podAnnotations: {}
       # my-annotation: "value"
+    nodeSelector: {}
+    tolerations: []
+    affinity: {}
 
   redis:
     # enable/disable redis chart dependency
@@ -225,6 +231,9 @@ zammadConfig:
       # my-label: "value"
     podAnnotations: {}
       # my-annotation: "value"
+    nodeSelector: {}
+    tolerations: []
+    affinity: {}
 
   storageVolume:
     # Enable this for 'File' based storage in Zammad. You must provide an externally managed 'extistingClaim'
@@ -292,6 +301,9 @@ zammadConfig:
       # my-label: "value"
     podAnnotations: {}
       # my-annotation: "value"
+    nodeSelector: {}
+    tolerations: []
+    affinity: {}
 
   initContainers:
     elasticsearch:
@@ -381,6 +393,9 @@ zammadConfig:
     # my-annotation: "value"
     podSpec: {}
     # my-podspec: "value"
+    nodeSelector: {}
+    tolerations: []
+    affinity: {}
 
 # additional environment vars added to all zammad services
 extraEnv: []
