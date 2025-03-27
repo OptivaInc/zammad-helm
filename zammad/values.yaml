@@ -138,8 +138,29 @@ zammadConfig:
     podAnnotations: {}
       # my-annotation: "value"
     nodeSelector: {}
+      # node-label: "value"
     tolerations: []
+      # - key: "key"
+      #   operator: "Equal"
+      #   value: "value"
+      #   effect: "NoSchedule"
     affinity: {}
+      # nodeAffinity:
+      #   requiredDuringSchedulingIgnoredDuringExecution:
+      #     nodeSelectorTerms:
+      #       - matchExpressions:
+      #           - key: "node-label"
+      #             operator: In
+      #             values:
+      #               - "value"
+      # podAntiAffinity:
+      #   preferredDuringSchedulingIgnoredDuringExecution:
+      #     - weight: 100
+      #       podAffinityTerm:
+      #         topologyKey: kubernetes.io/hostname # For host anti-affinity
+      #         labelSelector:
+      #           matchLabels:
+      #             app.kubernetes.io/component: zammad-nginx
 
   postgresql:
     # enable/disable postgresql chart dependency
@@ -197,10 +218,30 @@ zammadConfig:
     podLabels: {}
       # my-label: "value"
     podAnnotations: {}
-      # my-annotation: "value"
     nodeSelector: {}
+      # node-label: "value"
     tolerations: []
+      # - key: "key"
+      #   operator: "Equal"
+      #   value: "value"
+      #   effect: "NoSchedule"
     affinity: {}
+      # nodeAffinity:
+      #   requiredDuringSchedulingIgnoredDuringExecution:
+      #     nodeSelectorTerms:
+      #       - matchExpressions:
+      #           - key: "node-label"
+      #             operator: In
+      #             values:
+      #               - "value"
+      # podAntiAffinity:
+      #   preferredDuringSchedulingIgnoredDuringExecution:
+      #     - weight: 100
+      #       podAffinityTerm:
+      #         topologyKey: kubernetes.io/hostname # For host anti-affinity
+      #         labelSelector:
+      #           matchLabels:
+      #             app.kubernetes.io/component: zammad-railsserver
 
   redis:
     # enable/disable redis chart dependency
@@ -232,8 +273,21 @@ zammadConfig:
     podAnnotations: {}
       # my-annotation: "value"
     nodeSelector: {}
+      # node-label: "value"
     tolerations: []
+      # - key: "key"
+      #   operator: "Equal"
+      #   value: "value"
+      #   effect: "NoSchedule"
     affinity: {}
+      # nodeAffinity:
+      #   requiredDuringSchedulingIgnoredDuringExecution:
+      #     nodeSelectorTerms:
+      #       - matchExpressions:
+      #           - key: "node-label"
+      #             operator: In
+      #             values:
+      #               - "value"
 
   storageVolume:
     # Enable this for 'File' based storage in Zammad. You must provide an externally managed 'extistingClaim'
@@ -302,8 +356,21 @@ zammadConfig:
     podAnnotations: {}
       # my-annotation: "value"
     nodeSelector: {}
+      # node-label: "value"
     tolerations: []
+      # - key: "key"
+      #   operator: "Equal"
+      #   value: "value"
+      #   effect: "NoSchedule"
     affinity: {}
+      # nodeAffinity:
+      #   requiredDuringSchedulingIgnoredDuringExecution:
+      #     nodeSelectorTerms:
+      #       - matchExpressions:
+      #           - key: "node-label"
+      #             operator: In
+      #             values:
+      #               - "value"
 
   initContainers:
     elasticsearch:
@@ -394,8 +461,21 @@ zammadConfig:
     podSpec: {}
     # my-podspec: "value"
     nodeSelector: {}
+      # node-label: "value"
     tolerations: []
+      # - key: "key"
+      #   operator: "Equal"
+      #   value: "value"
+      #   effect: "NoSchedule"
     affinity: {}
+      # nodeAffinity:
+      #   requiredDuringSchedulingIgnoredDuringExecution:
+      #     nodeSelectorTerms:
+      #       - matchExpressions:
+      #           - key: "node-label"
+      #             operator: In
+      #             values:
+      #               - "value"
 
 # additional environment vars added to all zammad services
 extraEnv: []
@@ -449,9 +529,27 @@ podLabels: {}
 podAnnotations: {}
   # my-annotation: "value"
 
+# Common pod nodeSelector for all Zammad components. Values in .Zammad.*.nodeSelector will override this.
 nodeSelector: {}
+  # node-label: "value"
+
+# Common pod tolerations for all Zammad components. Values in .Zammad.*.tolerations will override this.
 tolerations: []
+  # - key: "key"
+  #   operator: "Equal"
+  #   value: "value"
+  #   effect: "NoSchedule"
+
+# Common pod affinity for all Zammad components. Values in .Zammad.*.affinity will override this.
 affinity: {}
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #       - matchExpressions:
+  #           - key: "node-label"
+  #             operator: In
+  #             values:
+  #               - "value"
 
 # service account configurations
 serviceAccount:
