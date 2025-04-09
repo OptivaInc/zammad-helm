@@ -161,6 +161,13 @@ zammadConfig:
       #         labelSelector:
       #           matchLabels:
       #             app.kubernetes.io/component: zammad-nginx
+    topologySpreadConstraints: []  # TopologySpreadConstraints for pod placement
+      # - maxSkew: 1
+      #   topologyKey: "kubernetes.io/hostname"
+      #   whenUnsatisfiable: ScheduleAnyway
+      #   labelSelector:
+      #     matchLabels:
+      #      app.kubernetes.io/name: zammad
 
   postgresql:
     # enable/disable postgresql chart dependency
@@ -242,6 +249,14 @@ zammadConfig:
       #         labelSelector:
       #           matchLabels:
       #             app.kubernetes.io/component: zammad-railsserver
+      # my-annotation: "value"
+    topologySpreadConstraints: []  # TopologySpreadConstraints for pod placement
+      # - maxSkew: 1
+      #   topologyKey: "kubernetes.io/hostname"
+      #   whenUnsatisfiable: ScheduleAnyway
+      #   labelSelector:
+      #     matchLabels:
+      #      app.kubernetes.io/name: zammad
 
   redis:
     # enable/disable redis chart dependency
@@ -288,6 +303,13 @@ zammadConfig:
       #             operator: In
       #             values:
       #               - "value"
+    topologySpreadConstraints: []  # TopologySpreadConstraints for pod placement
+      # - maxSkew: 1
+      #   topologyKey: "kubernetes.io/hostname"
+      #   whenUnsatisfiable: ScheduleAnyway
+      #   labelSelector:
+      #     matchLabels:
+      #      app.kubernetes.io/name: zammad
 
   storageVolume:
     # Enable this for 'File' based storage in Zammad. You must provide an externally managed 'extistingClaim'
@@ -371,6 +393,13 @@ zammadConfig:
       #             operator: In
       #             values:
       #               - "value"
+    topologySpreadConstraints: []  # TopologySpreadConstraints for pod placement
+      # - maxSkew: 1
+      #   topologyKey: "kubernetes.io/hostname"
+      #   whenUnsatisfiable: ScheduleAnyway
+      #   labelSelector:
+      #     matchLabels:
+      #      app.kubernetes.io/name: zammad
 
   initContainers:
     elasticsearch:
@@ -476,6 +505,13 @@ zammadConfig:
       #             operator: In
       #             values:
       #               - "value"
+    topologySpreadConstraints: []  # TopologySpreadConstraints for pod placement
+      # - maxSkew: 1
+      #   topologyKey: "kubernetes.io/hostname"
+      #   whenUnsatisfiable: ScheduleAnyway
+      #   labelSelector:
+      #     matchLabels:
+      #      app.kubernetes.io/name: zammad
 
 # additional environment vars added to all zammad services
 extraEnv: []
@@ -550,6 +586,14 @@ affinity: {}
   #             operator: In
   #             values:
   #               - "value"
+
+topologySpreadConstraints: []  # TopologySpreadConstraints for pod placement
+  # - maxSkew: 1
+  #   topologyKey: "kubernetes.io/hostname"
+  #   whenUnsatisfiable: ScheduleAnyway
+  #   labelSelector:
+  #     matchLabels:
+  #      app.kubernetes.io/name: zammad
 
 # service account configurations
 serviceAccount:
